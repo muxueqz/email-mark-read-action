@@ -22,6 +22,7 @@ imap = imaplib.IMAP4_SSL(imap_host)
 ## login to server
 imap.login(imap_user, imap_pass)
 
+imap.xatom('ID', '("name" "workflow" "version" "1.0" "vendor" "workflow")')
 imap.select('Inbox', readonly=False)
 
 with open(output_file + '/dump.json', 'r') as _fd:
